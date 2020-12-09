@@ -1,1 +1,1 @@
-web: mv server.js dist/server.js & node dist/server.js
+web: mv server.js dist/server.js & mv src/assets dist/assets & node dist/server.js

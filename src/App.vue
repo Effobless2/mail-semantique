@@ -9,6 +9,9 @@
             <b-nav-item to="/about">
               About
             </b-nav-item>
+            <b-nav-item to="/forTeacher">
+              For Teacher
+            </b-nav-item>
           </b-navbar-nav>
         </b-navbar>
       </div>
