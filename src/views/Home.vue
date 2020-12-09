@@ -131,7 +131,7 @@ export default class Home extends Vue {
       const name = temp[temp.length - 1];
       const mail = await this.fullfillMail(name);
       this.mails.push(mail);
-      this.selected.push(false);
+      this.selected.push(true);
       this.duration.push(0);
     });
   }
