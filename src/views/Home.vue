@@ -55,7 +55,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue';
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   components: {
@@ -101,7 +101,7 @@ export default class Home extends Vue {
     let result = 0;
     for(let i = 0; i < this.selected.length; i++) {
       if (this.selected[i]) {
-        let mailSize = this.computeMailSize(this.mails[i]);
+        const mailSize = this.computeMailSize(this.mails[i]);
         result += mailSize / 1000 * 19;
         result += mailSize / 1000 * 9.6 * this.duration[i];
       }
