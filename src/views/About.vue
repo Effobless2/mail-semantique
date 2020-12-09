@@ -12,8 +12,8 @@
       <p>
         Cependant, cette digitalisation n'est pas <b class="green">verte</b> pour autant. En effet, l'utilisation d'internet
         nécessite la mise en place de serveurs aux quatre coins du globe. Ces derniers ont pour rôle de traiter les requêtes
-        mais également de stocker les données circulant sur la toile, générant ainsi des consommations d'énergie des émissions de CO².
-        Aujourd'hui, <b>78% des datas stockées dans les serveurs sont des Mails</b>, dont la plupart ne seront jamais lus (spams, newsletters, etc).
+        mais également de stocker les données circulant sur la toile, générant ainsi des consommations d'énergie et des émissions de CO².
+        Aujourd'hui, <b>78% des data stockées dans les serveurs sont des Mails</b>, dont la plupart ne seront jamais lus (spams, newsletters, etc).
         En effet, les mails sont la manière la plus populaire afin d'échanger des informations : rapidité de réception, simplicité de réalisation et,
         la plupart du temps, gratuit. Aujourd'hui, un français recevrait environs 936 newsletters par an générant ainsi 9 kilos de CO². 
         En moyenne, l'émission d'un mail d'1 Mo (mail contenant une image par exemple) génère en moyenne 19 grammes de CO². 
@@ -63,6 +63,12 @@
           <a 
             href="https://www.mailcleaner.net/fr/">
             MailCleaner
+          </a>
+        </li>
+        <li>
+          <a 
+            href="https://data.escr.fr/wiki/Utilisateur:Mdeboffle/projet">
+            Page wiki du projet
           </a>
         </li>
       </ul>
