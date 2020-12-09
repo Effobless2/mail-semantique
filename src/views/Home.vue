@@ -26,7 +26,7 @@
                 </p>
               </div>
               <div class="col-lg-2">
-                <h5>Durée de conservation : {{ duration[index] }} ans</h5>
+                <h5>Durée de conservation : {{ duration[index] === 0 ? '' : duration[index] === 1 ? '1 an' : `${durantion[index]} ans` }}</h5>
                 <b-form-input v-model="duration[index]" type="range" min="0" max="5"></b-form-input>
               </div>
               <div class="col-lg-2">
@@ -89,8 +89,8 @@ export default class Home extends Vue {
   }
 
   created() {
-    //this.getAllMails();
-    this.mails = [{name:"Newsletter",size:50,recipient:"maxime.deboffle@gmail.com",attachements:[{name:"Image",size:5000}]},{name:"Candidature",size:100,recipient:"contact@exapceo.com",attachements:[{name:"CV",size:500},{name:"LM",size:500}]},{name:"SendManga",size:100,recipient:"maxime.deboffle@exapceo.com",attachements:[{name:"Zip",size:1000}]}];
+    this.getAllMails();
+    //this.mails = [{name:"Newsletter",size:50,recipient:"maxime.deboffle@gmail.com",attachements:[{name:"Image",size:5000}]},{name:"Candidature",size:100,recipient:"contact@exapceo.com",attachements:[{name:"CV",size:500},{name:"LM",size:500}]},{name:"SendManga",size:100,recipient:"maxime.deboffle@exapceo.com",attachements:[{name:"Zip",size:1000}]}];
     this.mails.map(_ => {
       this.selected.push(false);
       this.duration.push(0);
