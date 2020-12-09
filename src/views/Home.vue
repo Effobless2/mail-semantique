@@ -26,7 +26,7 @@
                 </p>
               </div>
               <div class="col-lg-2">
-                <h5>Durée de conservation : {{ duration[index] === 0 ? '' : duration[index] === 1 ? '1 an' : `${durantion[index]} ans` }}</h5>
+                <h5>Durée de conservation : {{ computeDurationLine(index) }}</h5>
                 <b-form-input v-model="duration[index]" type="range" min="0" max="5"></b-form-input>
               </div>
               <div class="col-lg-2">
@@ -91,10 +91,7 @@ export default class Home extends Vue {
   created() {
     this.getAllMails();
     //this.mails = [{name:"Newsletter",size:50,recipient:"maxime.deboffle@gmail.com",attachements:[{name:"Image",size:5000}]},{name:"Candidature",size:100,recipient:"contact@exapceo.com",attachements:[{name:"CV",size:500},{name:"LM",size:500}]},{name:"SendManga",size:100,recipient:"maxime.deboffle@exapceo.com",attachements:[{name:"Zip",size:1000}]}];
-    this.mails.map(_ => {
-      this.selected.push(false);
-      this.duration.push(0);
-    });
+    
   }
 
   get computedResult() {
@@ -113,6 +110,18 @@ export default class Home extends Vue {
     return mail.size + mail.attachements.map(x => x.size).reduce((a,b) => a + b);
   }
 
+  computeDurationLine(index) {
+    const integer = parseInt(this.duration[index]);
+    switch(integer) {
+      case 0:
+        return 'Jamais conservé';
+      case 1:
+        return '1 an';
+      default:
+        return `${this.duration[index]} ans`;
+    }
+  }
+
   /* Get Datas */
   async getAllMails() {
     const mailsResults = await this.testQuery(this.getAllMailsQuery);
@@ -122,6 +131,8 @@ export default class Home extends Vue {
       const name = temp[temp.length - 1];
       const mail = await this.fullfillMail(name);
       this.mails.push(mail);
+      this.selected.push(false);
+      this.duration.push(0);
     });
   }
 
